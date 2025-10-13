@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/homepage.dart';
+import 'package:flutter_application_1/music_v2.dart';
 
 class Course extends StatefulWidget {
   const Course({super.key});
@@ -41,22 +42,23 @@ class _CourseState extends State<Course> {
     ];
     return DefaultTabController(length: 2, child: 
     Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
-        }, icon: Image(image: AssetImage('assets/images/backbutton_white.png',),)),
-        actions: [
-          IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/favorite_button_gray.png',),)),
-          IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/download_button.png',),))
-        ],
-      ),
+      // extendBodyBehindAppBar: true,
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   elevation: 0,
+      //   backgroundColor: Colors.transparent,
+      //   leading: IconButton(onPressed: (){
+      //     Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+      //   }, icon: Image(image: AssetImage('assets/images/backbutton_white.png',),)),
+      //   actions: [
+      //     IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/favorite_button_gray.png',),)),
+      //     IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/download_button.png',),))
+      //   ],
+      // ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView( scrollDirection: Axis.vertical,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      body:
+      ListView(
+        children: [
           Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)), height: 288, width: double.infinity, child: Image(image: AssetImage("assets/images/course_upper_image.png"),fit: BoxFit.fill)),
           Padding(
             padding: const EdgeInsets.all(20),
@@ -102,7 +104,9 @@ class _CourseState extends State<Course> {
                           return Container(
                             // height: 50,color: Colors.amber,
                             child: Row( children: [
-                              IconButton(onPressed: (){}, icon: Icon(Icons.play_circle,size: 40,color: Color(0xFF8E97FD),)),
+                              IconButton(onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => MusicV2(),));
+                              }, icon: Icon(Icons.play_circle,size: 40,color: Color(0xFF8E97FD),)),
                               SizedBox(width: 20,),
                               Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
                                   Text(maleVoice[index]['name'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
@@ -128,6 +132,6 @@ class _CourseState extends State<Course> {
           )
         ],),
       ),
-    ));
+    );
   }
 }
