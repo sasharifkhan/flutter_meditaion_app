@@ -42,26 +42,28 @@ class _CourseState extends State<Course> {
     ];
     return DefaultTabController(length: 2, child: 
     Scaffold(
-      // extendBodyBehindAppBar: true,
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   elevation: 0,
-      //   backgroundColor: Colors.transparent,
-      //   leading: IconButton(onPressed: (){
-      //     Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
-      //   }, icon: Image(image: AssetImage('assets/images/backbutton_white.png',),)),
-      //   actions: [
-      //     IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/favorite_button_gray.png',),)),
-      //     IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/download_button.png',),))
-      //   ],
-      // ),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+        }, icon: Image(image: AssetImage('assets/images/backbutton_white.png',),)),
+        actions: [
+          IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/favorite_button_gray.png',),)),
+          IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/download_button.png',),))
+        ],
+      ),
       backgroundColor: Colors.white,
       body:
       ListView(
+        padding: EdgeInsets.only(top:0,bottom: 0),
+        
         children: [
           Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)), height: 288, width: double.infinity, child: Image(image: AssetImage("assets/images/course_upper_image.png"),fit: BoxFit.fill)),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text("Happy Morning",style: TextStyle(fontSize: 34,fontWeight: FontWeight.w600),),
               SizedBox(height: 20,),
@@ -102,7 +104,7 @@ class _CourseState extends State<Course> {
                       child: TabBarView( children: [
                         ListView.separated(itemCount: maleVoice.length, scrollDirection: Axis.vertical, itemBuilder: (context, index) {
                           return Container(
-                            // height: 50,color: Colors.amber,
+                            height: 50,color: Colors.amber,
                             child: Row( children: [
                               IconButton(onPressed: (){
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => MusicV2(),));

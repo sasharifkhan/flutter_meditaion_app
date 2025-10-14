@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/course.dart';
+import 'package:flutter_application_1/meditate_v2.dart';
+import 'package:flutter_application_1/silent_moon.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -49,9 +51,11 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        title: SizedBox(height: 30,width: 168,child: Image(image: AssetImage("assets/images/silent_moon_image.png")),),
+        title: SizedBox(height: 30,width: 168,child: InkWell(onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SilentMoon(),));
+        }, child: Image(image: AssetImage("assets/images/silent_moon_image.png"))),),
       ),
-      body: Padding(padding: EdgeInsets.all(20),child: SingleChildScrollView(
+      body: Padding(padding: EdgeInsets.only(top: 20,left: 20,right: 20),child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column( crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -95,6 +99,7 @@ class Homepage extends StatelessWidget {
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                 Text("Daily Thought",style: TextStyle(color: Colors.white,fontSize: 18),),
                 Row(children: [
@@ -127,31 +132,33 @@ class Homepage extends StatelessWidget {
       ),),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(left: 20,right: 20),
-        height: 112, decoration: BoxDecoration(
+        height: 90, decoration: BoxDecoration(
         color: Colors.white,
       ),child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 46,decoration: BoxDecoration(color: Color(0xFF8E97FD) ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Icon(Icons.home_outlined,size: 44,color: Colors.white,),padding: EdgeInsets.all(0),),),
+          Container(height: 46,width: 46,decoration: BoxDecoration(color: Color(0xFF8E97FD) ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage("assets/images/home_icon_b.png"),height: 22,),padding: EdgeInsets.all(0),),),
           Text("Home",style: TextStyle(fontSize: 14,color:  Color(0xFF8E97FD),fontWeight: FontWeight.w600),)
         ],)),
 
         SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Icon(Icons.bedtime_outlined,size: 44,color: Color(0xFFA0A3B1),),padding: EdgeInsets.all(0),),),
+          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage("assets/images/sleep_icon_b.png"),height: 22,),padding: EdgeInsets.all(0),),),
           Text("Sleep",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
         ],)),
 
         SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Icon(Icons.run_circle_outlined,size: 44,color:  Color(0xFFA0A3B1),),padding: EdgeInsets.all(0),),),
+          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent ,shape: BoxShape.circle), child: IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MeditateV2(),));
+          }, icon: Image(image: AssetImage('assets/images/meditate_icon_b.png'),height: 22,),padding: EdgeInsets.all(0),),),
           Text("Meditate",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
         ],)),
 
         SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Icon(Icons.music_note_outlined,size: 44,color:  Color(0xFFA0A3B1),),padding: EdgeInsets.all(0),),),
+          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/music_icon_b.png'),height: 22,),padding: EdgeInsets.all(0),),),
           Text("Music",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
         ],)),
 
         SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Icon(Icons.person_outline,size: 44,color: Color(0xFFA0A3B1),),padding: EdgeInsets.all(0),),),
+          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/profile_icon_b.png'),height: 22,),padding: EdgeInsets.all(0),),),
           Text("Afsar",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
         ],)),
       ],), ),

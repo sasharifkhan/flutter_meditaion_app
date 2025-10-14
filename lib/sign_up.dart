@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/sign_in.dart';
+import 'package:flutter_application_1/sign_up_and_sign_in_screen.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -13,7 +13,7 @@ class SignUp extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         leading: IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpAndSignInScreen(),));
         }, icon: Image(image: AssetImage("assets/images/back_button.png"))),
 
       ),

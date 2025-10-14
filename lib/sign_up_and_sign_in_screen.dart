@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/sign_in.dart';
 import 'package:flutter_application_1/sign_up.dart';
 
 class SignUpAndSignInScreen extends StatefulWidget {
@@ -51,7 +53,11 @@ class _SignUpAndSignInScreenState extends State<SignUpAndSignInScreen> {
                       ),child: Text("SIGN UP",style: TextStyle(color: Colors.white,fontSize: 14),)),
                     ),
                     SizedBox(height: 20,),
-                    Text("ALREADY HAVE AN ACCOUNT? LOG IN")
+                    RichText(text: TextSpan(text: "ALREADY HAVE AN ACCOUNT? ", children: [
+                      TextSpan(text: "LOG IN", style:TextStyle(color: Color(0xFF8E97FD))  ,recognizer: TapGestureRecognizer()..onTap=(){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
+                      })
+                    ]))
                   ])
                 ]),
             ),
