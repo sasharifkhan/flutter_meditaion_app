@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/sign_up_and_sign_in_screen.dart';
+import 'package:flutter_application_1/welcome.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -89,7 +89,7 @@ class SignIn extends StatelessWidget {
                       width: double.infinity,
                       height: 63,
                       child: ElevatedButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Welcome(),));
                       }, style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFF8E97FD),elevation: 0,
                       ),child: Text("LOG IN",style: TextStyle(color: Colors.white,fontSize: 14),)),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/course.dart';
 import 'package:flutter_application_1/meditate_v2.dart';
-import 'package:flutter_application_1/silent_moon.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -51,9 +50,7 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        title: SizedBox(height: 30,width: 168,child: InkWell(onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => SilentMoon(),));
-        }, child: Image(image: AssetImage("assets/images/silent_moon_image.png"))),),
+        title: SizedBox(height: 30,width: 168,child: Image(image: AssetImage("assets/images/silent_moon_image.png")),),
       ),
       body: Padding(padding: EdgeInsets.only(top: 20,left: 20,right: 20),child: SingleChildScrollView(
         scrollDirection: Axis.vertical,

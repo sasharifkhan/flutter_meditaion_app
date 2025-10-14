@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/sign_up.dart';
+import 'package:flutter_application_1/silent_moon.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -28,7 +28,7 @@ class Welcome extends StatelessWidget {
                     width: double.infinity,
                     height: 63,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SilentMoon(),));
                     }, style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,elevation: 0,
                     ),child: Text("GET STARTED",style: TextStyle(color: Colors.black,fontSize: 14),)),
