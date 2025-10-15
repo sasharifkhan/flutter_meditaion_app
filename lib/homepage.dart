@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/course.dart';
-import 'package:flutter_application_1/meditate_v2.dart';
+
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -127,39 +127,6 @@ class Homepage extends StatelessWidget {
           },), )
         ],),
       ),),
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.only(left: 20,right: 20),
-        height: 90, decoration: BoxDecoration(
-        color: Colors.white,
-      ),child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 46,decoration: BoxDecoration(color: Color(0xFF8E97FD) ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage("assets/images/home_icon_b.png"),height: 22,),padding: EdgeInsets.all(0),),),
-          Text("Home",style: TextStyle(fontSize: 14,color:  Color(0xFF8E97FD),fontWeight: FontWeight.w600),)
-        ],)),
-
-        SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent ,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage("assets/images/sleep_icon_b.png"),height: 22,),padding: EdgeInsets.all(0),),),
-          Text("Sleep",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
-        ],)),
-
-        SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent ,shape: BoxShape.circle), child: IconButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => MeditateV2(),));
-          }, icon: Image(image: AssetImage('assets/images/meditate_icon_b.png'),height: 22,),padding: EdgeInsets.all(0),),),
-          Text("Meditate",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
-        ],)),
-
-        SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/music_icon_b.png'),height: 22,),padding: EdgeInsets.all(0),),),
-          Text("Music",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
-        ],)),
-
-        SizedBox(height: 66,width: 60 , child: Column(children: [
-          Container(height: 46,width: 60,decoration: BoxDecoration(color: Colors.transparent,shape: BoxShape.circle), child: IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/profile_icon_b.png'),height: 22,),padding: EdgeInsets.all(0),),),
-          Text("Afsar",style: TextStyle(fontSize: 14,color:  Color(0xFFA0A3B1),fontWeight: FontWeight.w400),)
-        ],)),
-      ],), ),
-
     );
   }
 }

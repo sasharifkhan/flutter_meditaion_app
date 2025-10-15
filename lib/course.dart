@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/homepage.dart';
+import 'package:flutter_application_1/main_navigation_screen.dart';
 import 'package:flutter_application_1/music_v2.dart';
 
 class Course extends StatefulWidget {
@@ -48,7 +49,7 @@ class _CourseState extends State<Course> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MainNavigationScreen(),));
         }, icon: Image(image: AssetImage('assets/images/backbutton_white.png',),)),
         actions: [
           IconButton(onPressed: (){}, icon: Image(image: AssetImage('assets/images/favorite_button_gray.png',),)),
@@ -100,35 +101,33 @@ class _CourseState extends State<Course> {
               ],),
                   SizedBox(
                     height: 500,
-                    child: Expanded(
-                      child: TabBarView( children: [
-                        ListView.separated(itemCount: maleVoice.length, scrollDirection: Axis.vertical, itemBuilder: (context, index) {
-                          return Container(
-                            height: 50,color: Colors.amber,
-                            child: Row( children: [
-                              IconButton(onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => MusicV2(),));
-                              }, icon: Icon(Icons.play_circle,size: 40,color: Color(0xFF8E97FD),)),
-                              SizedBox(width: 20,),
-                              Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-                                  Text(maleVoice[index]['name'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
-                                  Text(maleVoice[index]['duration'],style: TextStyle(color: Color(0xFFA1A4B2), fontSize: 11),)
-                              ],)
-                            ],),
-                          );
-                        }, separatorBuilder: (BuildContext context, int index) => Divider(height: 10,),),
-                        ListView.separated(itemCount: femaleVoice.length, scrollDirection: Axis.vertical, itemBuilder: (context, index) {
-                          return Row(children: [
-                            IconButton(onPressed: (){}, icon: Icon(Icons.play_circle,size: 40,color: Color(0xFF8E97FD),)),
+                    child: TabBarView( children: [
+                      ListView.separated(padding: EdgeInsets.all(0), itemCount: maleVoice.length, scrollDirection: Axis.vertical, itemBuilder: (context, index) {
+                        return SizedBox(
+                          height: 50,
+                          child: Row( children: [
+                            IconButton(onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MusicV2(),));
+                            }, icon: Icon(Icons.play_circle,size: 40,color: Color(0xFF8E97FD),)),
                             SizedBox(width: 20,),
-                            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                Text(femaleVoice[index]['name'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
-                                Text(femaleVoice[index]['duration'],style: TextStyle(color: Color(0xFFA1A4B2), fontSize: 11),)
+                            Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
+                                Text(maleVoice[index]['name'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                                Text(maleVoice[index]['duration'],style: TextStyle(color: Color(0xFFA1A4B2), fontSize: 11),)
                             ],)
-                          ],);
-                        }, separatorBuilder: (BuildContext context, int index) => Divider(height: 10,),)
-                      ]),
-                    ),
+                          ],),
+                        );
+                      }, separatorBuilder: (BuildContext context, int index) => Divider(height: 10,),),
+                      ListView.separated(padding: EdgeInsets.all(0), itemCount: femaleVoice.length, scrollDirection: Axis.vertical, itemBuilder: (context, index) {
+                        return Row(children: [
+                          IconButton(onPressed: (){}, icon: Icon(Icons.play_circle,size: 40,color: Color(0xFF8E97FD),)),
+                          SizedBox(width: 20,),
+                          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                              Text(femaleVoice[index]['name'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+                              Text(femaleVoice[index]['duration'],style: TextStyle(color: Color(0xFFA1A4B2), fontSize: 11),)
+                          ],)
+                        ],);
+                      }, separatorBuilder: (BuildContext context, int index) => Divider(height: 10,),)
+                    ]),
                   )
             ],),
           )

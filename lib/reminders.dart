@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/homepage.dart';
+import 'package:flutter_application_1/main_navigation_screen.dart';
 
 class Reminders extends StatelessWidget {
   const Reminders({super.key});
@@ -34,10 +35,10 @@ class Reminders extends StatelessWidget {
             InkWell(onTap: () {}, child: Container(height: 41,width: 41, decoration: BoxDecoration(border: BoxBorder.all(color: Colors.black,width: 2), color: Colors.black, shape: BoxShape.circle), child: Center(child: Text("S",style: TextStyle(color: Colors.white,fontSize: 14,),)),)),
           ],),),
           SizedBox(height: 63, width: double.infinity, child: ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MainNavigationScreen(),));
           }, style: ElevatedButton.styleFrom(backgroundColor: Color(0xFF8E97FD)), child: Text("SAVE",style: TextStyle(fontSize: 14,color: Colors.white),))),
           Center(child: InkWell(onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MainNavigationScreen(),));
           }, child: Text("NO THANKS",style: TextStyle(fontSize: 14),)))
 
         ],),
