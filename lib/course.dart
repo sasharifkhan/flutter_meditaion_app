@@ -75,13 +75,13 @@ class _CourseState extends State<Course> {
                 Row(children: [
                   SizedBox(height: 20,width: 20, child: Image(image: AssetImage("assets/images/favorites_icons.png"))),
                   SizedBox(width: 10,),
-                  Text("24.234 Favorits"),
+                  Text("24,234 Favorits"),
                 ],),
                 SizedBox(width: 20,),
                 Row(children: [
                   SizedBox(height: 20,width: 20, child: Image(image: AssetImage("assets/images/listning_icons.png"))),
                   SizedBox(width: 10,),
-                  Text("34.234 Lestening"),
+                  Text("34,234 Lestening"),
                 ],),
               ],),
               SizedBox(height: 20,),
