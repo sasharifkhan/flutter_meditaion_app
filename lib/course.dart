@@ -99,7 +99,7 @@ class _CourseState extends State<Course> {
         
               ],),
                   SizedBox(
-                    height: 600,
+                    height: 500,
                     child: TabBarView( children: [
                       ListView.separated(padding: EdgeInsets.all(0), itemCount: maleVoice.length, scrollDirection: Axis.vertical, itemBuilder: (context, index) {
                         return SizedBox(
